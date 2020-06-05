@@ -28,6 +28,10 @@
         </div>
     </div>
 </div>
+<img src="~ " />
+<img src="~" />
+<img src="~" />
+<img src="~" />
 <!-- Breadcrumbs End -->
 <!-- Main Container -->
 <section class="main-container col1-layout">
@@ -38,16 +42,14 @@
                     <div class="page-title">
                         <h2>Liên hệ với chúng tôi</h2>
                     </div>
-                    <div id="message-box-conact">We're available for new projects</div>
+                    <div id="message-box-conact">Chúng tôi luôn sẵn sàn hỗ trợ đôi chân của bạn</div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-6" id="contact_form_map">
-                            <h3 class="page-subheading">Let's get in touch</h3>
-                            <p>Lorem ipsum dolor sit amet onsectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor dapibus eget. Mauris tincidunt aliquam lectus sed vestibulum. Vestibulum bibendum suscipit mattis.</p>
-                            <br />
+                            <h3 class="page-subheading">Hãy để đôi chân của bạn đánh giá giày của chúng tôi</h3>
                             <ul>
-                                <li><i class="fa fa-circle"></i> Praesent nec tincidunt turpis.</li>
-                                <li><i class="fa fa-circle"></i> Aliquam et nisi risus.&nbsp;Cras ut varius ante.</li>
-                                <li><i class="fa fa-circle"></i> Ut congue gravida dolor, vitae viverra dolor.</li>
+                                <li><i class="fa fa-circle"></i> Dịch vụ hậu mãi và bảo hành luôn được đặc lên hàng đầu.</li>
+                                <li><i class="fa fa-circle"></i> Khuyến mãi hàng tháng.&nbsp;Giao hàng tận mùng.</li>
+                                <li><i class="fa fa-circle"></i> Có đầy đủ các thương hiêu giày nổi tiếng trên thế giới</li>
                             </ul>
                             <br />
                             <ul class="store_info">
@@ -81,12 +83,12 @@
                             {
                                 <div id="map" style="width:100%;height:500px;"></div>
                                 <form action="/contact.html" method="post">
-                                    <h3 class="page-subheading">Make an enquiry</h3>
+                                    <h3 class="page-subheading">Phản hồi cho chúng tôi</h3>
                                     <div asp-validation-summary="All" class="text-danger"></div>
                                     @Html.AntiForgeryToken()
                                     <div class="contact-form-box">
                                         <div class="form-selector">
-                                            <label>Name</label>
+                                            <label>Tên của bạn</label>
                                             <input type="text" class="form-control input-sm" asp-for="Feedback.Name" />
                                         </div>
                                         <div class="form-selector">
@@ -94,12 +96,11 @@
                                             <input type="text" class="form-control input-sm" asp-for="Feedback.Email" />
                                         </div>
                                         <div class="form-selector">
-                                            <label>Message</label>
+                                            <label>Tin nhắn</label>
                                             <textarea class="form-control input-sm" rows="10" asp-for="Feedback.Message"></textarea>
                                         </div>
                                         <div class="form-selector">
-                                            <button type="submit" class="button"><i class="icon-paper-plane icons"></i>&nbsp; <span>Send Message</span></button>
-                                            &nbsp; <a href="#" class="button">Clear</a>
+                                            <button type="submit" class="button"><i class="icon-paper-plane icons"></i>&nbsp; <span>Gửi phản hồi</span></button>
                                         </div>
                                     </div>
                                 </form>

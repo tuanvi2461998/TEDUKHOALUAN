@@ -11,9 +11,12 @@ namespace TeduCoreApp.Controllers.Components
     {
 
         private IProductCategoryService _productCategoryService;
+        private IProductService _productService;
 
-        public MainMenuViewComponent(IProductCategoryService productCategoryService)
+        public MainMenuViewComponent(IProductCategoryService productCategoryService,
+             IProductService productService)
         {
+            _productService = productService;
             _productCategoryService = productCategoryService;
         }
 

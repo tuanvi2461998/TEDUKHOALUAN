@@ -21,7 +21,7 @@ namespace TeduCoreApp.Application.Interfaces
 
         List<BlogViewModel> GetLastest(int top);
 
-        List<BlogViewModel> GetHotProduct(int top);
+        List<BlogViewModel> GetHotBlog(int top);
 
         List<BlogViewModel> GetListPaging(int page, int pageSize, string sort, out int totalRow);
 
@@ -36,15 +36,5 @@ namespace TeduCoreApp.Application.Interfaces
         BlogViewModel GetById(int id);
 
         void Save();
-
-        List<TagViewModel> GetListTagById(int id);
-
-        TagViewModel GetTag(string tagId);
-
-        void IncreaseView(int id);
-
-        List<BlogViewModel> GetListByTag(string tagId, int page, int pagesize, out int totalRow);
-
-        List<TagViewModel> GetListTag(string searchText);
     }
 }

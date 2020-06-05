@@ -264,5 +264,10 @@ namespace TeduCoreApp.Application.Implementation
             return _tagRepository.FindAll(x => x.Type == CommonConstants.ProductTag
             && searchText.Contains(x.Name)).ProjectTo<TagViewModel>().ToList();
         }
+
+        public List<BlogViewModel> GetHotBlog(int top)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -150,7 +150,7 @@
                         tedu.startLoading();
                     },
                     success: function (response) {
-                        tedu.notify('Update product successful', 'success');
+                        tedu.notify('Successful', 'success');
                         $('#modal-add-edit').modal('hide');
                         resetFormMaintainance();
 
@@ -230,11 +230,11 @@
 
         $('#hidIdM').val(0);
         $('#txtNameM').val(''); 
-        $('#txtContentM').val('');
+        CKEDITOR.instances.txtContent.setData('');
         $('#txtDescM').val('');
 
         $('#txtHomeOrderM').val('');
-        $('#txtImageM').val('');
+        $('#txtImage').val('');
 
         $('#txtkeywordM').val('');
         $('#txtDescriptionM').val('');
