@@ -9,5 +9,7 @@ namespace TeduCoreApp.Models.BlogViewModels
     public class BlogDetailViewModel
     {
         public BlogViewModel Blog { get; set; }
+
+        public List<BlogViewModel> GetReatedBlogs { get; set; }
     }
 }

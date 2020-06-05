@@ -20,19 +20,26 @@ namespace TeduCoreApp.Controllers
             _configuration = configuration;
         }
         [Route("blog.html")]
-        public IActionResult Index(int pageSize, string sortBy, int page)
+        public IActionResult Index(int? pageSize, string sortBy, int page = 1)
         {
-            var blog = new BlogViewModel();
+            var bl = new AllBlogViewModel();
             ViewData["BodyClass"] = "blog_page";
-         
-
-            blog.SortType = sortBy;
-            return View(_blogService.GetAll());
+            if (pageSize == null)
+                pageSize = _configuration.GetValue<int>("PageSize");
+            bl.PageSize = pageSize;
+            bl.SortType = sortBy;
+            bl.Data = _blogService.GetAllPaging(string.Empty,pageSize.Value , page);
+            return View(bl);
         }
         [Route("{alias}-b.{id}.html", Name = "BlogDetail")]
         public IActionResult Details(int id)
         {
-            return View();
+            var post = new BlogDetailViewModel();
+
+            ViewData["BodyClass"] = " blog_post";
+            post.Blog = _blogService.GetById(id);
+            post.GetReatedBlogs = _blogService.GetReatedBlogs(id,3);
+            return View(post);
         }
     }
 }
