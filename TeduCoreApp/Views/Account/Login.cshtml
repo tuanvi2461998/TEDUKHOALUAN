@@ -12,8 +12,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <ul>
-                    <li class="home"> <a title="Go to Home Page" href="/">Home</a><span>&raquo;</span></li>
-                    <li><strong>My Account</strong></li>
+                    <li class="home"> <a title="Go to Home Page" href="/">Trang chủ</a><span>&raquo;</span></li>
+                    <li><strong>Đăng nhập</strong></li>
                 </ul>
             </div>
         </div>
@@ -29,14 +29,14 @@
                     <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
                         <h4>Login</h4>
                         <div asp-validation-summary="All" class="text-danger"></div>
-                        <p class="before-login-text">Welcome back! Sign in to your account</p>
+                        <p class="before-login-text">Chào mừng quay trở lại, đăng nhập tài khoản của bạn</p>
                         <label asp-for="Email"></label>
                         <input type="text" asp-for="Email" class="form-control">
                         <label asp-for="Password"></label>
                         <input id="password_login" asp-for="Password" type="password" class="form-control">
-                        <p class="forgot-pass"><a asp-action="ForgotPassword">Lost your password?</a></p>
+                        <p class="forgot-pass"><a asp-action="ForgotPassword">Quên mật khấu?</a></p>
                         <button type="submit" class="button">
-                            <i class="icon-lock icons"></i>&nbsp; <span>Login</span>
+                            <i class="icon-lock icons"></i>&nbsp; <span>Đăng nhập</span>
                         </button>
                         <label class="inline" asp-for="RememberMe">
                             <input asp-for="RememberMe" />
@@ -44,7 +44,7 @@
                     </form>
 
                     <section>
-                        <h4>Use another service to log in.</h4>
+                        <h4>Sử dụng dịch vụ khác để đăng nhập.</h4>
                         <hr />
                         @{
                             var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -52,8 +52,8 @@
                             {
                                 <div>
                                     <p>
-                                        There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                                        for details on setting up this ASP.NET application to support logging in via external services.
+                                        Không có dịch vụ xác thực bên ngoài được cấu hình. Xem <a href="https://go.microsoft.com/fwlink/?LinkID=532715"> bài viết này</a>
+                                        để biết chi tiết về việc thiết lập ứng dụng ASP.NET này để hỗ trợ đăng nhập thông qua các dịch vụ bên ngoài.
                                     </p>
                                 </div>
                             }
@@ -74,16 +74,16 @@
                     </section>
                 </div>
                 <div class="box-authentication">
-                    <h4>Register</h4>
-                    <p>Create your very own account</p>
+                    <h4>Đăng ký</h4>
+                    <p>Tạo tài khoản của riêng bạn</p>
 
                     <button onclick="window.location.href='/register.html'" class="button"><i class="icon-user icons"></i>&nbsp; <span>Register</span></button>
                     <div class="register-benefits">
-                        <h5>Sign up today and you will be able to :</h5>
+                        <h5>Đăng ký ngay hôm nay và bạn sẽ có thể:</h5>
                         <ul>
-                            <li>Speed your way through checkout</li>
-                            <li>Track your orders easily</li>
-                            <li>Keep a record of all your purchases</li>
+                            <li>Tăng tốc thanh toán</li>
+                            <li>Theo dõi đơn hàng dễ dàng</li>
+                            <li>Nhận được những khuyến mãi hấp dẫn</li>
                         </ul>
                     </div>
                 </div>

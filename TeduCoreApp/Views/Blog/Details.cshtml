@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Details";
     var blog = Model.Blog;
+    var u = Model.Blog.SeoAlias + "-b." + Model.Blog.Id + ".html";
 }
 <!-- Main Container -->
 <section class="blog_post">
@@ -55,7 +56,7 @@
                                 </div>
                             </div>
                         </div>
-                    
+                        
                 </div>
                 <!-- ./Related Posts -->
                 <!-- Comment -->
@@ -64,12 +65,17 @@
                         <h2>Bình luận</h2>
                     </div>
                     <div class="comment-list">
-                        <ul>
-                            <a>Đây là cmt</a>
-                        </ul>
+                        <div id="fb-root"></div>
+                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0"></script>
+                        <div id="comment_fb">
+                            <div class="fb-comments" data-href="@u" data-numposts="7" data-width=""></div>
+                        </div>
                     </div>
                 </div>
                 <!-- ./Comment -->
+            </div>
+            <div class="col-sm-3">
+                <div class="fb-page py-3" data-href="https://www.facebook.com/kguconfession" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/kguconfession" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/kguconfession">Facebook</a></blockquote></div>
             </div>
         </div>
     </div>

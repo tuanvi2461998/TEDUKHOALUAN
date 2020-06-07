@@ -5,6 +5,7 @@
     ViewData["MetaDescription"] = Model.Product.SeoDescription;
     var category = Model.Category;
     var product = Model.Product;
+    var urlpro = "/" + Model.Product.SeoAlias + "-p." + Model.Product.Id + ".html";
 }
 <!-- Breadcrumbs -->
 @section Scripts{
@@ -30,12 +31,12 @@
 <!-- Breadcrumbs End -->
 <!-- Main Container -->
 <div class="main-container col1-layout">
-    <div class="container">
+     <div class="container">
         <div class="row">
             <div class="col-main">
                 <div class="product-view-area">
                     <div class="product-big-image col-xs-12 col-sm-5 col-lg-5 col-md-5">
-                        <div class="icon-sale-label sale-left">Sale</div>
+                        <div class="icon-sale-label sale-left">Khuyến mãi</div>
                         <div class="large-image"> <a href="@product.Image" class="cloud-zoom" id="zoom1" rel="useWrapper: false, adjustY:0, adjustX:20"> <img class="zoom-img" src="@product.Image" alt="@product.Name"> </a> </div>
                         <div class="flexslider flexslider-thumb">
                             <ul class="previews-list slides">
@@ -58,11 +59,11 @@
                             @if (product.PromotionPrice.HasValue)
                             {
                                 <p class="special-price">
-                                    <span class="price-label">Giá đặc biệt</span>
+                                    <span class="price-label">Giá khuyến mãi</span>
                                     <span class="price"> @product.PromotionPrice.Value.ToString("N0") </span>
                                 </p>
                                 <p class="old-price">
-                                    <span class="price-label">Regular Price:</span>
+                                    <span class="price-label">Giá:</span>
                                     <span class="price"> @product.Price.ToString("N0") </span>
                                 </p>
 
@@ -70,15 +71,17 @@
                             else
                             {
                                 <p class="special-price">
-                                    <span class="price-label">Special Price</span>
+                                    <span class="price-label">Giá khuyến mãi</span>
                                     <span class="price"> @product.Price.ToString("N0") </span>
                                 </p>
                             }
-
                         </div>
+                        <div id="fb-root"></div>
+                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0"></script>
                         <div class="ratings">
-                            <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> </div>
-                            <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Your Review</a> </p>
+                            <div class="rating">
+                                <div class="fb-like" data-href="@urlpro" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                            </div>
                             <p class="availability @(product.Status==TeduCoreApp.Data.Enums.Status.Active?"in-stock":"out-of-stock") pull-right">Availability: <span>@product.Status</span></p>
                         </div>
                         <div class="short-description">
@@ -127,15 +130,15 @@
                                 {
                                     <a href="/tag.@(tag.Id).html">@tag.Name</a>
                                 }
-
                             </div>
 
                         }
 
-                        <div class="share-box">
-                            <div class="title">Chia sẻ lên mạng xã hội</div></div>
-                            <div class="socials-box"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-youtube"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-instagram"></i></a> </div>
-                        </div>
+                        @* <div class="share-box">
+        <div class="title">Chia sẻ lên mạng xã hội</div></div>
+        <div class="socials-box"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-youtube"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-instagram"></i></a> </div>
+                        *@
+                    </div>
                     </div>
                 </div>
             </div>
@@ -155,18 +158,24 @@
                                         </div>
                                     </div>
                                     <div id="reviews" class="tab-pane fade">
-                                        <div class="col-sm-5 col-lg-5 col-md-5">
-                                            <div class="reviews-content-left">
-                                                <span>Đây là nội dung cmt</span>
+                                        <div class="col-xs-12">
+                                            <div class="">
+                                                <div id="fb-root"></div>
+                                                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0"></script>
+                                                <div id="comment_fb">
+                                                    <div class="fb-comments" data-href="@urlpro" data-numposts="7" data-width=""></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                          </div>
                     </div>
             </div>
         </div>
     </div>
-
+     </div>
+</div>
 <!-- Main Container End -->
 <!-- Related Product Slider -->
 
