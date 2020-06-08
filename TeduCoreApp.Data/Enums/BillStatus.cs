@@ -7,15 +7,13 @@ namespace TeduCoreApp.Data.Enums
 {
     public enum BillStatus
     {
-        [Description("New bill")]
+        [Description("Đơn mới")]
         New,
-        [Description("In Progress")]
+        [Description("Đang xử lý")]
         InProgress,
-        [Description("Returned")]
+        [Description("Trả hàng")]
         Returned,
-        [Description("Cancelled")]
-        Cancelled,
-        [Description("Completed")]
+        [Description("Hoàn thành")]
         Completed
     }
 }

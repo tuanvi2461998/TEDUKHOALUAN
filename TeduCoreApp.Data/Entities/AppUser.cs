@@ -30,6 +30,7 @@ namespace TeduCoreApp.Data.Entities
         public decimal Balance { get; set; }
 
         public string Avatar { get; set; }
+        
 
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
