@@ -52,7 +52,7 @@
             }
             @if (result.Succeeded)
             {
-                <button class="btn btn-success" id="btn-create" type="button">Tạo mới</button>
+                <button class="btn btn-success" id="btnCreate" type="button">Tạo mới</button>
             }
             <a class="btn btn-danger" href="~/templates/ProductImportTemplate.xlsx">Mẫu Ex</a>
             <button class="btn btn-primary" id="btn-import" title="Import Excel" type="button"><i class="fa fa-file-excel-o"></i></button>
@@ -73,7 +73,6 @@
                             <th>Loại</th>
                             <th>Giá</th>
                             <th>Hình ảnh</th>
-                            <th>Ngày tạo</th>
                             <th>Trạng thái</th>
                             <th width="20%">#</th>
                         </tr>
@@ -112,7 +111,6 @@
         <td>{{CategoryName}}</td>
         <td>{{Price}}</td>
         <td>{{{Image}}}</td>
-        <td>{{CreatedDate}}</td>
         <td>{{{Status}}}</td>
         <th scope="row">
             @if ((await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Update)).Succeeded)

@@ -102,12 +102,9 @@ namespace TeduCoreApp.Data.EF
                     if (item.State == EntityState.Added)
                     {
                         changedOrAddedItem.DateCreated = DateTime.Now;
-                    }   
-              
-                        changedOrAddedItem.DateModified = DateTime.Now;
-                    
+                    }
+                    changedOrAddedItem.DateModified = DateTime.Now;
                 }
-               
             }
             return base.SaveChanges();
         }

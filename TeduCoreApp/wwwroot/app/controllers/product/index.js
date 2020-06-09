@@ -184,11 +184,11 @@
 
             var image = $('#txtImage').val();
 
-            var tags = $('#txtTagM').val();
-            var seoKeyword = $('#txtMetakeywordM').val();
-            var seoMetaDescription = $('#txtMetaDescriptionM').val();
-            var seoPageTitle = $('#txtSeoPageTitleM').val();
-            var seoAlias = $('#txtSeoAliasM').val();
+            var tags = $('#txttagm').val();
+            var seokeyword = $('#txtmetakeywordm').val();
+            var seometadescription = $('#txtmetadescriptionm').val();
+            var seopagetitle = $('#txtseopagetitlem').val();
+            var seoalias = $('#txtseoaliasm').val();
 
             var content = CKEDITOR.instances.txtContent.getData();
             var status = $('#ckStatusM').prop('checked') == true ? 1 : 0;
@@ -223,7 +223,7 @@
                     tedu.startLoading();
                 },
                 success: function (response) {
-                    tedu.notify('Update product successful', 'success');
+                    tedu.notify('Thành công', 'success');
                     $('#modal-add-edit').modal('hide');
                     resetFormMaintainance();
 
@@ -357,7 +357,7 @@
         $('#txtDescription').val('');
         $('#txtSeoPageTitle').val('');
         $('#txtSeoAliasM').val('');
-        CKEDITOR.instances.txtContents.setData('');
+        CKEDITOR.instances.txtContent.setData('');
         $('#ckStatusM').prop('checked', true);
         $('#ckHotM').prop('checked', false);
         $('#ckShowHomeM').prop('checked', false);
