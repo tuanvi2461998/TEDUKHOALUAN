@@ -184,11 +184,11 @@
 
             var image = $('#txtImage').val();
 
-            var tags = $('#txttagm').val();
-            var seokeyword = $('#txtmetakeywordm').val();
-            var seometadescription = $('#txtmetadescriptionm').val();
+            var tags = $('#txtTagM').val();
+            var seokeyword = $('#txtMetakeywordM').val();
+            var seometadescription = $('#txtMetaDescriptionM').val();
             var seopagetitle = $('#txtseopagetitlem').val();
-            var seoalias = $('#txtseoaliasm').val();
+            var seoalias = $('#txtSeoAliasM').val();
 
             var content = CKEDITOR.instances.txtContent.getData();
             var status = $('#ckStatusM').prop('checked') == true ? 1 : 0;
@@ -213,10 +213,10 @@
                     Tags: tags,
                     Unit: unit,
                     Status: status,
-                    SeoPageTitle: seoPageTitle,
-                    SeoAlias: seoAlias,
-                    SeoKeywords: seoKeyword,
-                    SeoDescription: seoMetaDescription
+                    SeoPageTitle: seopagetitle,
+                    SeoAlias: seoalias,
+                    SeoKeywords: seokeyword,
+                    SeoDescription: seometadescription
                 },
                 dataType: "json",
                 beforeSend: function () {
@@ -405,7 +405,7 @@
                         Image: item.Image == null ? '<img src="/admin-side/images/user.png" width=25' : '<img src="' + item.Image + '" width=25 />',
                         CategoryName: item.ProductCategory.Name,
                         Price: tedu.formatNumber(item.Price, 0),
-                        CreatedDate: tedu.dateTimeFormatJson(item.DateCreated),
+                        CreatedDate: item.DateCreated,
                         Status: tedu.getStatus(item.Status)
                     });
                     
