@@ -208,7 +208,7 @@
                         Content: item.Content,
                         Description: item.Description,
                         Image: item.Image == null ? '<img src="/admin-side/images/user.png" width=25' : '<img src="' + item.Image + '" width=25 />',
-                        CreatedDate: tedu.dateTimeFormatJson(item.DateCreated),
+                        CreatedDate: tedu.dateFormatJson(item.DateCreated),
                         Status: tedu.getStatus(item.Status)
                     });
                     $('#lblTotalRecords').text(response.RowCount);

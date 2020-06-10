@@ -92,7 +92,7 @@ namespace TeduCoreApp.Data.EF
 
         public override int SaveChanges()
         {
-            var modified = ChangeTracker.Entries().Where(e=>e.State == EntityState.Added);
+            var modified = ChangeTracker.Entries().Where(e=>e.State == EntityState.Added || e.State == EntityState.Modified);
 
             foreach (EntityEntry item in modified)
             {
@@ -103,7 +103,7 @@ namespace TeduCoreApp.Data.EF
                     {
                         changedOrAddedItem.DateCreated = DateTime.Now;
                     }
-                  
+                    changedOrAddedItem.DateCreated = DateTime.Now;
                 }
             }
             return base.SaveChanges();
