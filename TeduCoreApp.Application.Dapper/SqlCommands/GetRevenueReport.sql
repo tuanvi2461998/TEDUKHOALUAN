@@ -1,4 +1,4 @@
-﻿CREATE PROC GetRevenueDaily
+﻿ALTER PROC GetRevenueDaily
 	@fromDate VARCHAR(10),
 	@toDate VARCHAR(10)
 AS
@@ -13,9 +13,10 @@ BEGIN
                 inner join Products p
                 on bd.ProductId  = p.Id
                 where b.DateCreated <= cast(@toDate as date) 
-				AND b.DateCreated >= cast(@fromDate as date)
+				AND b.DateCreated >= cast(@fromDate as date) AND b.BillStatus = '3'
                 group by b.DateCreated
 END
 
-EXEC dbo.GetRevenueDaily @fromDate = '12/01/2019',
-                         @toDate = '12/12/2020' 
+EXEC dbo.GetRevenueDaily @fromDate = '6/1/2020',
+                         @toDate = '6/30/2020' 
+

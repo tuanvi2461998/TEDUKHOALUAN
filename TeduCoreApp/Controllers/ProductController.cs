@@ -66,7 +66,7 @@ namespace TeduCoreApp.Controllers
         }
 
         [Route("{alias}-p.{id}.html", Name = "ProductDetail")]
-        public IActionResult Details(int id)
+        public IActionResult Details(int id, int colorid, int sizeid)
         {
             ViewData["BodyClass"] = "product-page";
             var model = new DetailViewModel();
@@ -86,7 +86,6 @@ namespace TeduCoreApp.Controllers
                 Text = x.Name,
                 Value = x.Id.ToString()
             }).ToList();
-
             return View(model);
         }
 

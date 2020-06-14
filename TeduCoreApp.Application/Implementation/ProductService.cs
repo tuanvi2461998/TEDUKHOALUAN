@@ -170,13 +170,13 @@ namespace TeduCoreApp.Application.Implementation
 
                     product.PromotionPrice = promotionPrice;
                     product.Content = workSheet.Cells[i, 6].Value.ToString();
-                    product.SeoKeywords = workSheet.Cells[i, 7].Value.ToString();
+                   // product.SeoKeywords = workSheet.Cells[i, 7].Value.ToString();
 
-                    product.SeoDescription = workSheet.Cells[i, 8].Value.ToString();
-                    bool.TryParse(workSheet.Cells[i, 9].Value.ToString(), out var hotFlag);
+                    product.SeoDescription = workSheet.Cells[i, 7].Value.ToString();
+                    bool.TryParse(workSheet.Cells[i, 8].Value.ToString(), out var hotFlag);
 
                     product.HotFlag = hotFlag;
-                    bool.TryParse(workSheet.Cells[i, 10].Value.ToString(), out var homeFlag);
+                    bool.TryParse(workSheet.Cells[i, 9].Value.ToString(), out var homeFlag);
                     product.HomeFlag = homeFlag;
 
                     product.Status = Status.Active;

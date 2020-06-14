@@ -111,7 +111,7 @@ namespace TeduCoreApp.Areas.Admin.Controllers
         public IActionResult ExportExcel(int billId)
         {
             string sWebRootFolder = _hostingEnvironment.WebRootPath;
-            string sFileName = $"Bill_{billId}.xlsx";
+            string sFileName = $"HoaDon_{billId}.xlsx";
             // Template File
             string templateDocument = Path.Combine(sWebRootFolder, "templates", "BillTemplate.xlsx");
 
@@ -132,9 +132,9 @@ namespace TeduCoreApp.Areas.Admin.Controllers
                     var billDetail = _billService.GetDetail(billId);
 
                     // Insert customer data into template
-                    worksheet.Cells[4, 1].Value = "Customer Name: " + billDetail.CustomerName;
-                    worksheet.Cells[5, 1].Value = "Address: " + billDetail.CustomerAddress;
-                    worksheet.Cells[6, 1].Value = "Phone: " + billDetail.CustomerMobile;
+                    worksheet.Cells[4, 1].Value = "Tên khách: " + billDetail.CustomerName;
+                    worksheet.Cells[5, 1].Value = "Địa chỉ: " + billDetail.CustomerAddress;
+                    worksheet.Cells[6, 1].Value = "Số điện thoại: " + billDetail.CustomerMobile;
                     // Start Row for Detail Rows
                     int rowIndex = 9;
 
@@ -159,7 +159,7 @@ namespace TeduCoreApp.Areas.Admin.Controllers
                     decimal total = (decimal)(orderDetails.Sum(x => x.Quantity * x.Price));
                     worksheet.Cells[24, 5].Value = total.ToString("N0");
 
-                    var numberWord = "Total amount (by word): " + TextHelper.ToString(total);
+                    var numberWord = "Tổng tiền (bằng chữ): " + TextHelper.ToString(total);
                     worksheet.Cells[26, 1].Value = numberWord;
                     var billDate = billDetail.DateCreated;
                     worksheet.Cells[28, 3].Value = billDate.Day + ", " + billDate.Month + ", " + billDate.Year;

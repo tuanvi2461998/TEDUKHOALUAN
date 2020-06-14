@@ -72,7 +72,7 @@
                                     <div class="product-item">
                                         <div class="item-inner">
                                             <div class="product-thumbnail">
-                                                <div class="icon-new-label new-left">New</div>
+                                                <div class="icon-new-label new-left">Mới</div>
                                                 <div class="pr-img-area">
                                                     <a title="@item.Name" href="/@item.SeoAlias-p.@(item.Id).html">
                                                         <figure>
@@ -89,8 +89,8 @@
                                                         <div class="item-price">
                                                             <div class="price-box"> <span class="regular-price"> <span class="price">@item.Price.ToString("N0")</span> </span> </div>
                                                         </div>
-                                                        <div class="pro-action">
-                                                            <button type="button" class="add-to-cart" data-id="@item.Id"><span>Mua ngay</span> </button>
+                                                        <div class="">
+                                                            <button type="button" class="add-to-cart" data-id="@item.Id"><span>Thêm vào giỏ</span> </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -160,8 +160,6 @@
                                                     </div>
                                                     <div class="pr-info-area">
                                                         <div class="pr-button">
-                                                            <div class="mt-button add_to_wishlist"> <a href="wishlist.html"> <i class="fa fa-heart-o"></i> </a> </div>
-                                                            <div class="mt-button add_to_compare"> <a href="compare.html"> <i class="fa fa-link"></i> </a> </div>
                                                             <div class="mt-button quick-view"> <a href="quick_view.html"> <i class="fa fa-search"></i> </a> </div>
                                                         </div>
                                                     </div>
@@ -226,13 +224,13 @@
                                 <ul class="products-grid">
                                     @foreach (var sp in Model.HotProducts)
                                     {
-                                        var url = "/" + sp.SeoAlias + "-c." + sp.Id + ".html";
+                                        var url = "/" + sp.SeoAlias + "-p." + sp.Id + ".html";
                                         <li class="item">
                                             <div class="item-inner">
-                                                <div class="item-img"> <a class="product-image" title="Retis lapen casen" href="@url"> <img alt="HTML template" src="@sp.Image"> </a> </div>
+                                                <div class="item-img"> <a class="product-image" title="@sp.Name" href="@url"> <img alt="HTML template" src="@sp.Image"> </a> </div>
                                                 <div class="item-info">
                                                     <div class="info-inner">
-                                                        <div class="item-title"> <a title="Product title here" href="single_product.html">@sp.Name</a> </div>
+                                                        <div class="item-title"> <a title="@sp.Name" href="@url">@sp.Name</a> </div>
                                                         <div class="item-price">
                                                             <div class="price-box"> <span class="regular-price"> <span class="price">@sp.Price</span> </span> </div>
                                                         </div>
@@ -292,57 +290,3 @@
 <!-- our clients Slider
 Component.InvokeAsync("Brand") -->
 <!-- BANNER-AREA-START -->
-<div class="footer-newsletter">
-    <div class="container">
-        <div class="row">
-            <!-- Newsletter -->
-            <div class="col-md-6 col-sm-6">
-                <form id="newsletter-validate-detail" method="post" action="#">
-                    <h3>Kết nối với chúng tôi</h3>
-                    <div class="title-divider"><span></span></div>
-                    <p class="sub-title text-center">Giảm 25%</p>
-                    <div class="newsletter-inner">
-                        <input class="newsletter-email" name='Email' placeholder='Nhập email của bạn' />
-                        <button class="button subscribe" type="submit" title="Subscribe">Đăng ký</button>
-                    </div>
-                </form>
-            </div>
-            <!-- Customers Box -->
-            <div class="col-sm-6 col-xs-12 testimonials">
-                <div class="page-header">
-                    <h2>Đánh giá của khách hàng</h2>
-                </div>
-                <div class="slider-items-products">
-                    <div id="testimonials-slider" class="product-flexslider hidden-buttons home-testimonials">
-                        <div class="slider-items slider-width-col4 ">
-                            <div class="holder">
-                                <blockquote>
-                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip volutpat.
-                                    Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel.
-                                </blockquote>
-                                <div class="thumb"> <img src="/client-side/images/testimonials-img3.jpg" alt="testimonials img"> </div>
-                                <div class="holder-info"> <strong class="name">John Doe</strong> <strong class="designation">CEO, Company</strong></div>
-                            </div>
-                            <div class="holder">
-                                <blockquote>Lorem ipsum dolor sit ame consetur adipisicing elit. Voluptate, consetur adipisicing elit.Lorem ipsum dolor sit ame consetur adipisicing elit.Lorem ipsum dolor sit ame consetur adipisicing elit. Voluptate, consetur adipisicing elit.</blockquote>
-                                <div class="thumb"> <img src="/client-side/images/testimonials-img1.jpg" alt="testimonials img"> </div>
-                                <div class="holder-info"> <strong class="name">Vince Roy</strong> <strong class="designation">CEO, Newspaper</strong> </div>
-                            </div>
-                            <div class="holder">
-                                <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Donec sit amet eros. Cras feugiat luctus nulla vitae posuere. Suspendisse potenti. </blockquote>
-                                <div class="thumb"> <img src="/client-side/images/testimonials-img2.jpg" alt="testimonials img"> </div>
-                                <div class="holder-info"><strong class="name">John Doe</strong> <strong class="designation">CEO, ABC Softwear</strong></div>
-                            </div>
-                            <div class="holder">
-                                <blockquote>Aliquam erat volutpat. Sed do eiusmod tempor incididunt Integer rutrum ante eu lacus. Vestibulum libero nisl, porta vel, scelerisque eget. Donec sit amet eros. Nulla non ornare nisi, sed condimentum lorem. Morbi sed vehicula magna.</blockquote>
-                                <div class="thumb"> <img src="/client-side/images/testimonials-img4.jpg" alt="testimonials img"> </div>
-                                <div class="holder-info"> <strong class="name">Vince Roy</strong> <strong class="designation">CEO, XYZ Softwear</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

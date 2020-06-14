@@ -10,7 +10,7 @@
         $('#frmMaintainance').validate({
             errorClass: 'red',
             ignore: [],
-            lang: 'en',
+            lang: 'vi',
             rules: {
                 txtNameM: { required: true },
                 txtContentM: { required: true }
@@ -39,7 +39,7 @@
                     $('#hidIdM').val(data.Id);
                     $('#txtNameM').val(data.Name);
                     $('#txtDescM').val(data.Description);
-                    $('#txtImageM').val(data.Image);
+                    $('#txtImage').val(data.Image);
                     $('#txtTagM').val(data.Tags);
                     $('#txtMetakeywordM').val(data.SeoKeywords);
                     $('#txtMetaDescriptionM').val(data.SeoDescription);

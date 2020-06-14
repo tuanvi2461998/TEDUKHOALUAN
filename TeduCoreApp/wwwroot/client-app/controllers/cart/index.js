@@ -24,7 +24,7 @@
                     productId: id
                 },
                 success: function () {
-                    tedu.notify('Removing product is successful.', 'success');
+                    tedu.notify('Xóa sản phẩm thành công.', 'Thành công');
                     loadHeaderCart();
                     loadData();
                 }
@@ -43,13 +43,13 @@
                         quantity: q
                     },
                     success: function () {
-                        tedu.notify('Update quantity is successful', 'success');
+                        tedu.notify('Cập nhật số lượng thành công', 'Thành công');
                         loadHeaderCart();
                         loadData();
                     }
                 });
             } else {
-                tedu.notify('Your quantity is invalid', 'error');
+                tedu.notify('Số lượng của bạn không được để trống', 'Lỗi');
             }
 
         });
@@ -72,7 +72,7 @@
                         size:sizeId
                     },
                     success: function () {
-                        tedu.notify('Update quantity is successful', 'success');
+                        tedu.notify('Cập nhật màu thành công', 'success');
                         loadHeaderCart();
                         loadData();
                     }
@@ -100,7 +100,7 @@
                         size:sizeId
                     },
                     success: function () {
-                        tedu.notify('Update quantity is successful', 'success');
+                        tedu.notify('Cập nhật kích cỡ thành công', 'success');
                         loadHeaderCart();
                         loadData();
                     }
@@ -116,7 +116,7 @@
                 url: '/Cart/ClearCart',
                 type: 'post',
                 success: function () {
-                    tedu.notify('Clear cart is successful', 'success');
+                    tedu.notify('Đã xóa toàn bộ sản trong giỏ', 'Thành công');
                     loadHeaderCart();
                     loadData();
                 }
@@ -132,7 +132,7 @@
                 cachedObj.colors = response;
             },
             error: function () {
-                tedu.notify('Has an error in progress', 'error');
+                tedu.notify('Có lỗi khi tải màu', 'error');
             }
         });
     }
@@ -146,7 +146,7 @@
                 cachedObj.sizes = response;
             },
             error: function () {
-                tedu.notify('Has an error in progress', 'error');
+                tedu.notify('Có lỗi khi tải size', 'error');
             }
         });
     }
@@ -204,7 +204,7 @@
                 if (render !== "")
                     $('#table-cart-content').html(render);
                 else
-                    $('#table-cart-content').html('You have no product in cart');
+                    $('#table-cart-content').html('Bạn không có sản phẩm nào trong giỏ');
             }
         });
         return false;

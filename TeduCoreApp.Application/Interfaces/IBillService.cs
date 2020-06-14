@@ -12,6 +12,8 @@ namespace TeduCoreApp.Application.Interfaces
         void Create(BillViewModel billVm);
         void Update(BillViewModel billVm);
 
+        List<BillViewModel> GetByCustomer(string Name);
+
         PagedResult<BillViewModel> GetAllPaging(string startDate, string endDate, string keyword,
             int pageIndex, int pageSize);
 

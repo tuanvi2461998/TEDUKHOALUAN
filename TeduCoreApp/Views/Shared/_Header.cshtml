@@ -12,7 +12,7 @@
                     </div>
                     <!-- top links -->
                     <div class="headerlinkmenu col-md-8 col-sm-8 col-xs-12">
-                        <span class="phone  hidden-xs hidden-sm">Call Us:  +84 0328.328.190</span>
+                        <span class="phone  hidden-xs hidden-sm">Điện thoại:  +84 0328.328.190</span>
                         <ul class="links">
                             <li class="hidden-xs"><a title="Help Center" href="#"><span>@Localizer["HelpCenter"]</span></a></li>
                             @if (User.Identity.IsAuthenticated)
@@ -23,13 +23,13 @@
                                         <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>@User.GetSpecificClaim("FullName")</span> <i class="fa fa-angle-down"></i></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href="/account.html">Account</a></li>
-                                            <li><a href="/orders-list.html">Theo dõi đơn hàng</a></li>
+                                            <li><a href="/order.html">Theo dõi đơn hàng</a></li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li>
                                     <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
-                                        <a href="#" onclick="document.getElementById('logoutForm').submit()"><span>Thoát</span></a>
+                                        <a href="#" onclick="document.getElementById('logoutForm').submit()" id="ss"><span>Thoát</span></a>
                                     </form>
                                 </li>
                             }

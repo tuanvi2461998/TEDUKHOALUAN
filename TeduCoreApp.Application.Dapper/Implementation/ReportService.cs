@@ -19,6 +19,27 @@ namespace TeduCoreApp.Application.Dapper.Implementation
         {
             _configuration = configuration;
         }
+
+      
+
+        public async Task<IEnumerable<BillQuantityViewModels>> BillQuantityAsync()
+        {
+            using (var sqlConnection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+                await sqlConnection.OpenAsync();
+
+                try
+                {
+                    return await sqlConnection.QueryAsync<BillQuantityViewModels>(
+                        "GetBillQuantity", commandType: CommandType.StoredProcedure);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+        }
+
         public async Task<IEnumerable<RevenueReportViewModel>> GetReportAsync(string fromDate, string toDate)
         {
             using (var sqlConnection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))

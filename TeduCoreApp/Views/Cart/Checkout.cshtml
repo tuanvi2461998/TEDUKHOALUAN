@@ -52,164 +52,166 @@
                     else
                     {
 
-                            <form action="/checkout.html" method="post">
-                                @Html.AntiForgeryToken()
-                                <h4 class="checkout-sep">1. Phương thức thanh toán</h4>
-                                <div class="box-border">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <h5>Thanh toán với tư cách là khách hàng hoặc Đăng ký</h5>
-                                            <p> Đăng ký với chúng tôi để thuận tiện trong tương lai:</p>
-                                            <br>
-                                            <h4>Đăng ký và tiết kiệm thời gian!</h4>
-                                            <p>Đăng ký với chúng tôi để thuận tiện trong tương lai:</p>
-                                            <p><i class="fa fa-check-circle text-primary"></i> Fast and easy check out</p>
-                                            <p><i class="fa fa-check-circle text-primary"></i> Easy access to your order history and status</p>
-                                            <button class="button" onclick="window.location.href='/register.html'"><i class="fa fa-angle-double-right"></i>&nbsp; <span>Continue</span></button>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <h5>Đăng nhập</h5>
-                                            <p>Đã đăng ký? Vui lòng đăng nhập bên dưới:</p>
-                                            <button class="button" onclick="window.location.href='/login.html'"><i class="icon-login"></i>&nbsp; <span>Đăng nhập</span></button>
-                                        </div>
+                        <form action="/checkout.html" method="post">
+                            @Html.AntiForgeryToken()
+                            <h4 class="checkout-sep">1. Phương thức thanh toán</h4>
+                            <div class="box-border">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h5>Thanh toán với tư cách là khách hàng hoặc Đăng ký</h5>
+                                        <p> Đăng ký với chúng tôi để thuận tiện trong tương lai:</p>
+                                        <br>
+                                        <h4>Đăng ký và tiết kiệm thời gian!</h4>
+                                        <p>Đăng ký với chúng tôi để thuận tiện trong tương lai</p>
+                                        <button class="button" onclick="window.location.href='/register.html'"><i class="fa fa-angle-double-right"></i>&nbsp; <span>Đăng ký ngay</span></button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h5>Đăng nhập</h5>
+                                        <p>Nếu bạn có tài khoản, vui lòng đăng nhập bên dưới:</p>
+                                        <button class="button" onclick="window.location.href='/login.html'"><i class="icon-login"></i>&nbsp; <span>Đăng nhập</span></button>
                                     </div>
                                 </div>
-                                <h4 class="checkout-sep">2.Thông tin vận chuyển</h4>
-                                @if (User.Identity.IsAuthenticated)
-                                {
-                                    <div class="box-border">
-                                        <ul>
-                                            <li class="row">
-                                                <div class="col-sm-6">
-                                                    <label class="required">Tên đầy đủ</label>
-                                                    <input class="input form-control" value="@User.GetSpecificClaim("FullName")" type="text" asp-for="CustomerName">
-                                                </div>
-                                                <!--/ [col] -->
-                                                <div class="col-sm-6">
-                                                    <label class="required">Số điện thoại</label>
-                                                    <input class="input form-control" type="text" value="@User.GetSpecificClaim("PhoneNumber")" asp-for="CustomerMobile">
-                                                </div>
-                                            </li>
-                                            <!--/ .row -->
-                                            <!--/ .row -->
-                                            <li class="row">
-                                                <div class="col-xs-12">
-                                                    <label class="required">Địa chỉ</label>
-                                                    <input class="input form-control" type="text" asp-for="CustomerAddress">
-                                                </div>
-                                                <!--/ [col] -->
-                                            </li>
-                                            <!--/ .row -->
-
-                                            <li class="row">
-                                                <div class="col-sm-12">
-                                                    <label class="required">Tin nhắn cho quản trị</label>
-                                                    <input class="input form-control" type="text" asp-for="CustomerMessage">
-                                                </div>
-                                                <!--/ [col] -->
-                                            </li>
-                                            <!--/ .row -->
-
-                                        </ul>
-                                    </div>
-                                }
-                                else
-                                {
-                                    <div class="box-border">
-                                        <ul>
-                                            <li class="row">
-                                                <div class="col-sm-6">
-                                                    <label class="required">Tên đầy đủ</label>
-                                                    <input class="input form-control"  type="text" asp-for="CustomerName">
-                                                </div>
-                                                <!--/ [col] -->
-                                                <div class="col-sm-6">
-                                                    <label class="required">Số điện thoại</label>
-                                                    <input class="input form-control" type="text"  asp-for="CustomerMobile">
-                                                </div>
-                                            </li>
-                                            <!--/ .row -->
-                                            <!--/ .row -->
-                                            <li class="row">
-                                                <div class="col-xs-12">
-                                                    <label class="required">Địa chỉ</label>
-                                                    <input class="input form-control" type="text"  asp-for="CustomerAddress">
-                                                </div>
-                                                <!--/ [col] -->
-                                            </li>
-                                            <!--/ .row -->
-
-                                            <li class="row">
-                                                <div class="col-sm-12">
-                                                    <label class="required">Tin nhắn cho quản trị</label>
-                                                    <input class="input form-control" type="text" asp-for="CustomerMessage">
-                                                </div>
-                                                <!--/ [col] -->
-                                            </li>
-                                            <!--/ .row -->
-
-                                        </ul>
-                                    </div>
-                                }
-                                <h4 class="checkout-sep">3. Thông tin thanh toán</h4>
+                            </div>
+                            <h4 class="checkout-sep">2.Thông tin vận chuyển</h4>
+                            @if (User.Identity.IsAuthenticated)
+                            {
                                 <div class="box-border">
                                     <ul>
-                                        @for (int i = 0; i < Model.PaymentMethods.Count; i++)
-                                        {
-                                            <li>
-                                                <label asp-for="@Model.PaymentMethods[i].Value">
-                                                    <input type="radio" name="paymentMethod" asp-for="PaymentMethod" value="@Model.PaymentMethods[i].Value">
-                                                    @Model.PaymentMethods[i].Name
-                                                </label>
-                                            </li>
-                                        }
+                                        <li class="row">
+                                            <div class="col-sm-6">
+                                                <label>Tên đầy đủ</label>
+                                                <input class="input form-control"  data-val-required="Vui lòng nhập họ tên đầy đủ." value="@User.GetSpecificClaim("FullName")" type="text" asp-for="CustomerName">
+                                                <span class="field-validation-valid" data-valmsg-for="CustomerName" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <!--/ [col] -->
+                                            <div class="col-sm-6">
+                                                <label >Số điện thoại</label>
+                                                <input class="input form-control" data-val-required="Vui lòng nhập số điện thoại." type="text" value="@User.GetSpecificClaim("PhoneNumber")" asp-for="CustomerMobile">
+                                            </div>
+                                        </li>
+                                        <!--/ .row -->
+                                        <!--/ .row -->
+                                        <li class="row">
+                                            <div class="col-xs-12">
+                                                <label>Địa chỉ</label>
+                                                <input class="input form-control" data-val-required="Vui lòng nhập địa chỉ." type="text"  asp-for="CustomerAddress">
+                                                <span class="field-validation-valid" data-valmsg-for="CustomerAddress" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <!--/ [col] -->
+                                        </li>
+                                        <!--/ .row -->
+
+                                        <li class="row">
+                                            <div class="col-sm-12">
+                                                <label>Tin nhắn cho cửa hàng</label>
+                                                <input class="input form-control" type="text" asp-for="CustomerMessage">
+                                            </div>
+                                            <!--/ [col] -->
+                                        </li>
+                                        <!--/ .row -->
+
                                     </ul>
-                                    <button class="button"><i class="fa fa-angle-double-right"></i>&nbsp; <span>Tiếp tục</span></button>
                                 </div>
-                                <h4 class="checkout-sep last">4. Xem lại đơn hàng</h4>
+                            }
+                            else
+                            {
                                 <div class="box-border">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered cart_summary">
-                                            <thead>
-                                                <tr>
-                                                    <th class="cart_product">Sản phẩm</th>
-                                                    <th>Mô tả</th>
-                                                    <th>Đơn giá</th>
-                                                    <th>Số lượng</th>
-                                                    <th>Tổng</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach (var item in Model.Carts)
-                                                {
-                                                    <tr>
-                                                        <td class="cart_product"><a href="/@item.Product.SeoAlias-p.@(item.Product.Id).html"><img src="@item.Product.Image" alt="@item.Product.Name"></a></td>
-                                                        <td class="cart_description">
-                                                            <p class="product-name"><a href="/@item.Product.SeoAlias-p.@(item.Product.Id).html">@item.Product.Name </a></p>
-                                                            <small><a href="#">Color : @item.Color.Name</a></small><br>
-                                                            <small><a href="#">Size : @item.Size.Name</a></small>
-                                                        </td>
-                                                        <td class="price"><span>@item.Price.ToString("N0") </span></td>
-                                                        <td class="qty">@item.Quantity</td>
-                                                        <td class="price"><span>@((item.Price * item.Quantity).ToString("N0")) </span></td>
-                                                    </tr>
+                                    <ul>
+                                        <li class="row">
+                                            <div class="col-sm-6">
+                                                <label>Tên đầy đủ</label>
+                                                <input class="input form-control"  data-val-required="Vui lòng nhập họ tên đầy đủ." type="text" asp-for="CustomerName">
+                                                <span class="field-validation-valid" data-valmsg-for="CustomerName" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <!--/ [col] -->
+                                            <div class="col-sm-6">
+                                                <label>Số điện thoại</label>
+                                                <input class="input form-control" data-val-required="Vui lòng nhập số điện thoại." type="text" asp-for="CustomerMobile">
+                                                <span class="field-validation-valid" data-valmsg-for="CustomerMobile" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </li>
+                                        <!--/ .row -->
+                                        <!--/ .row -->
+                                        <li class="row">
+                                            <div class="col-xs-12">
+                                                <label required>Địa chỉ</label>
+                                                <input class="input form-control" type="text"  data-val-required="Vui lòng nhập địa chỉ." asp-for="CustomerAddress">
+                                                <span class="field-validation-valid" data-valmsg-for="CustomerAddress" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <!--/ [col] -->
+                                        </li>
+                                        <!--/ .row -->
 
-                                                }
+                                        <li class="row">
+                                            <div class="col-sm-12">
+                                                <label >Tin nhắn cho quản trị</label>
+                                                <input class="input form-control" type="text" asp-for="CustomerMessage">
+                                            </div>
+                                            <!--/ [col] -->
+                                        </li>
+                                        <!--/ .row -->
 
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <td colspan="3"><strong>Tổng tiền</strong></td>
-                                                    <td colspan="2"><strong>@Model.Carts.Sum(x => x.Quantity * x.Price).ToString("N0") </strong></td>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                                    </div>
-                                    <recaptcha /><span class="text-danger" id="recaptchaErrorMessage"></span>
-                                    <button type="button" class="button" onclick="window.location.href='/cart.html'"><span>Back to cart</span></button>
-                                    <button type="submit" class="button pull-right"><span>Đặt hàng</span></button>
+                                    </ul>
                                 </div>
-                            </form>
+                            }
+                            <h4 class="checkout-sep">3.Thông tin thanh toán</h4>
+                            <div class="box-border">
+                                <ul>
+                                    @for (int i = 0; i < Model.PaymentMethods.Count; i++)
+                                    {
+                                        <li>
+                                            <label asp-for="@Model.PaymentMethods[i].Value">
+                                                <input type="radio" name="paymentMethod" asp-for="PaymentMethod" value="@Model.PaymentMethods[i].Value">
+                                                @Model.PaymentMethods[i].Name
+                                            </label>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                            <h4 class="checkout-sep last">4. Xem lại đơn hàng</h4>
+                            <div class="box-border">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered cart_summary">
+                                        <thead>
+                                            <tr>
+                                                <th class="cart_product">Sản phẩm</th>
+                                                <th>Mô tả</th>
+                                                <th>Đơn giá</th>
+                                                <th>Số lượng</th>
+                                                <th>Tổng</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.Carts)
+                                            {
+                                                <tr>
+                                                    <td class="cart_product"><a href="/@item.Product.SeoAlias-p.@(item.Product.Id).html"><img src="@item.Product.Image" alt="@item.Product.Name"></a></td>
+                                                    <td class="cart_description">
+                                                        <p class="product-name"><a href="/@item.Product.SeoAlias-p.@(item.Product.Id).html">@item.Product.Name </a></p>
+                                                        <small><a href="#">Color : @item.Color.Name</a></small><br>
+                                                        <small><a href="#">Size : @item.Size.Name</a></small>
+                                                    </td>
+                                                    <td class="price"><span>@item.Price.ToString("N0") </span></td>
+                                                    <td class="qty">@item.Quantity</td>
+                                                    <td class="price"><span>@((item.Price * item.Quantity).ToString("N0")) </span></td>
+                                                </tr>
+
+                                            }
+
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="3"><strong>Tổng tiền</strong></td>
+                                                <td colspan="2"><strong>@Model.Carts.Sum(x => x.Quantity * x.Price).ToString("N0") </strong></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <recaptcha /><span class="text-danger" id="recaptchaErrorMessage"></span>
+                                <button type="button" class="button" onclick="window.location.href='/cart.html'"><span>Trở về giỏ hàng</span></button>
+                                <button type="submit" class="button pull-right "><span>Đặt hàng</span></button>
+                            </div>
+                        </form>
                     }
                 </div>
             </div>

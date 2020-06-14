@@ -9,7 +9,7 @@ namespace TeduCoreApp.Data.Enums
     {
         [Description("Thanh toán tại nhà")]
         CashOnDelivery,
-        [Description("Chuyển khoảns")]
+        [Description("Tại cửa hàng")]
         OnlinBanking
     }
 }

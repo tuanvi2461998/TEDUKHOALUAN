@@ -17,7 +17,7 @@
                     size: 0
                 },
                 success: function (response) {
-                    tedu.notify(resources["AddCartOK"], 'success');
+                    tedu.notify(resources["AddCartOK"], 'Thành công');
                     loadHeaderCart();
                 }
             });
@@ -33,8 +33,19 @@
                     productId: id
                 },
                 success: function (response) {
-                    tedu.notify(resources["RemoveCartOK"], 'success');
+                    tedu.notify(resources["RemoveCartOK"], 'Thành công');
                     loadHeaderCart();
+                }
+            });
+        });
+        $('body').on('click', '#ss', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/Cart/ClearCart',
+                type: 'post',
+                success: function () {
+                    loadHeaderCart();
+                    loadData();
                 }
             });
         });

@@ -185,5 +185,11 @@ namespace TeduCoreApp.Application.Implementation
         {
             return Mapper.Map<Size, SizeViewModel>(_sizeRepository.FindById(id));
         }
+
+        public List<BillViewModel> GetByCustomer(string Name)
+        {
+            return _orderRepository.FindAll(x=>x.CustomerName==Name)
+                .ProjectTo<BillViewModel>().ToList();
+        }
     }
 }

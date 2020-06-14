@@ -20,7 +20,7 @@
                     size: sizeId
                 },
                 success: function () {
-                    tedu.notify('Product was added successful', 'success');
+                    tedu.notify('Sản phẩm đã được thêm thành công', 'success');
                     loadHeaderCart();
                 }
             });

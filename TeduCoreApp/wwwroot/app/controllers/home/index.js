@@ -2,6 +2,7 @@
     this.initialize = function () {
         initDateRangePicker();
         loadData();
+        loadQuantity();
     }
 
     function loadData(from, to) {
@@ -19,7 +20,6 @@
             },
             success: function (response) {
                 initChart(response);
-
                 tedu.stopLoading();
 
             },
@@ -29,6 +29,34 @@
             }
         });
     }
+    function loadQuantity() {
+        var template = $('#table-template').html();
+        var render = "";
+        $.ajax({
+            type: "GET",
+            url: "/Admin/Home/GetQuantityBill",
+            dataType: "json",
+            beforeSend: function () {
+                tedu.startLoading();
+            },
+            success: function (response) {
+                console.log(response);
+                $.each(response.Results, function (i, item) {
+                    render += Mustache.render(template, {
+                        Quantity: item.Quantity
+                    });
+                });
+                
+                alert(j);
+                    tedu.stopLoading();
+                },
+                    error: function (status) {
+                        tedu.notify('Có lỗi xảy ra', 'error');
+                        tedu.stopLoading();
+                    }
+        });
+    }
+
     function initChart(data) {
         var arrRevenue = [];
         var arrProfit = [];
@@ -108,7 +136,7 @@
 
             $.plot($("#chart_plot_02"),
                 [{
-                    label: "Revenue",
+                    label: "Doanh thu",
                     data: arrRevenue,
                     lines: {
                         fillColor: "rgba(150, 202, 89, 0.12)"
@@ -118,7 +146,7 @@
                     }
                 },
                 {
-                    label: "Profit",
+                    label: "Lợi nhuận",
                     data: arrProfit,
                     lines: {
                         fillColor: "rgba(140, 232, 289, 0.12)"
@@ -138,7 +166,7 @@
 
         var cb = function (start, end, label) {
             console.log(start.toISOString(), end.toISOString(), label);
-            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+            $('#reportrange span').html(start.format('MM,DD, YYYY') + ' - ' + end.format('MM, DD, YYYY'));
         };
 
         var optionSet1 = {
@@ -155,12 +183,11 @@
             timePickerIncrement: 1,
             timePicker12Hour: true,
             ranges: {
-                'Today': [moment(), moment()],
-                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                'Hôm nay': [moment(), moment()],
+                '7 ngày trước': [moment().subtract(6, 'days'), moment()],
+                '30 ngày trước': [moment().subtract(29, 'days'), moment()],
+                'Tháng này': [moment().startOf('month'), moment().endOf('month')],
+                'Tháng trước': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
             },
             opens: 'left',
             buttonClasses: ['btn btn-default'],
