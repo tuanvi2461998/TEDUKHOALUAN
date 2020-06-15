@@ -10,5 +10,6 @@ namespace TeduCoreApp.Application.Dapper.Interfaces
     {
         Task<IEnumerable<RevenueReportViewModel>> GetReportAsync(string fromDate, string toDate);
         Task<IEnumerable<BillQuantityViewModels>> BillQuantityAsync();
+        Task<IEnumerable<ProductViewModels>> ProductQuantityAsync();
     }
 }

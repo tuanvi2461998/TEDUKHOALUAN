@@ -34,5 +34,10 @@ namespace TeduCoreApp.Areas.Admin.Controllers
             var model = await _reportService.BillQuantityAsync();
             return new OkObjectResult(model);
         }
+        public async Task<IActionResult> GetQuantityProduct()
+        {
+            var model = await _reportService.ProductQuantityAsync();
+            return new OkObjectResult(model);
+        }
     }
 }

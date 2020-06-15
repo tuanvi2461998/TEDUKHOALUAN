@@ -3,6 +3,7 @@
         initDateRangePicker();
         loadData();
         loadQuantity();
+        
     }
 
     function loadData(from, to) {
@@ -40,14 +41,10 @@
                 tedu.startLoading();
             },
             success: function (response) {
-                console.log(response);
-                $.each(response.Results, function (i, item) {
-                    render += Mustache.render(template, {
-                        Quantity: item.Quantity
-                    });
+                $.each(response, function (i, item) {
+                    render += item.Quantity; 
                 });
-                
-                alert(j);
+                $("#re").html(render);
                     tedu.stopLoading();
                 },
                     error: function (status) {
@@ -56,7 +53,28 @@
                     }
         });
     }
-
+    function loadQuantityProduct() {
+        var render1 = "";
+        $.ajax({
+            type: "GET",
+            url: "/Admin/Home/GetQuantityProduct",
+            dataType: "json",
+            beforeSend: function () {
+                tedu.startLoading();
+            },
+            success: function (response) {
+                $.each(response, function (i, item) {
+                    render1 += item.QuantityPro;
+                });
+                $("#proquan").html(render1);
+                tedu.stopLoading();
+            },
+            error: function (status) {
+                tedu.notify('Có lỗi xảy ra', 'error');
+                tedu.stopLoading();
+            }
+        });
+    }
     function initChart(data) {
         var arrRevenue = [];
         var arrProfit = [];

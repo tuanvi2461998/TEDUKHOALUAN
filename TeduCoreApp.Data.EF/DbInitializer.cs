@@ -94,11 +94,8 @@ namespace TeduCoreApp.Data.EF
                     new Function() {Id = "PAGE",Name = "Trang",ParentId = "CONTENT",SortOrder = 2,Status = Status.Active,URL = "/admin/page/index",IconCss = "fa-table"  },
 
                     new Function() {Id = "UTILITY",Name = "Tiện ích",ParentId = null,SortOrder = 4,Status = Status.Active,URL = "/",IconCss = "fa-clone"  },
-                    new Function() {Id = "FOOTER",Name = "Footer",ParentId = "UTILITY",SortOrder = 1,Status = Status.Active,URL = "/admin/footer/index",IconCss = "fa-clone"  },
                     new Function() {Id = "FEEDBACK",Name = "Phản hồi",ParentId = "UTILITY",SortOrder = 2,Status = Status.Active,URL = "/admin/feedback/index",IconCss = "fa-clone"  },
-                    new Function() {Id = "ANNOUNCEMENT",Name = "Thông báo",ParentId = "UTILITY",SortOrder = 3,Status = Status.Active,URL = "/admin/announcement/index",IconCss = "fa-clone"  },
                     new Function() {Id = "CONTACT",Name = "Contact",ParentId = "UTILITY",SortOrder = 4,Status = Status.Active,URL = "/admin/contact/index",IconCss = "fa-clone"  },
-                    new Function() {Id = "SLIDE",Name = "Slide",ParentId = "UTILITY",SortOrder = 5,Status = Status.Active,URL = "/admin/slide/index",IconCss = "fa-clone"  }
                 });
             }
 
@@ -116,7 +113,7 @@ namespace TeduCoreApp.Data.EF
             {
                 List<Color> listColor = new List<Color>()
                 {
-                     new Color() {Name="Đen", Code="#000000" },
+                    new Color() {Name="Đen", Code="#000000" },
                     new Color() {Name="Trắng", Code="#FFFFFF"},
                     new Color() {Name="Đỏ", Code="#ff0000" },
                     new Color() {Name="Xanh", Code="#1000ff" },
@@ -193,39 +190,39 @@ namespace TeduCoreApp.Data.EF
                     new ProductCategory() { Name="Adidas",SeoAlias="adidas",ParentId = null,Status=Status.Active,SortOrder=1,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Product 1",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-1",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 2",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-2",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 3",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-3",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 4",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-4",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 5",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-5",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "GIÀY NIKE VOMERO",DateCreated=DateTime.Now,Image="/uploaded/images/20200608/giay-nike-air-max-720-nam-xam-cam-01-800x800_0.jpg",SeoAlias = "GIAY-NIKE-VOMERO",Price =  1000000,Status = Status.Active,OriginalPrice = 1000000},
+                            new Product(){Name = "Giày Sneaker Alexander Mcqueen",DateCreated=DateTime.Now,Image="/uploaded/images/20200608/giay-sneaker-alexander-mcqueen-size-39-5e1eb64b563a9-15012020135051.jpg",SeoAlias = "Giay-Sneaker-Alexander-Mcqueen",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "GIÀY SUPERSTAR",DateCreated=DateTime.Now,Image="/uploaded/images/20200608/Giay_Superstar_Mau_trang_EG4958_01_standard.jpg",SeoAlias = "san-pham-3",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "GIÀY ULTRABOOST 19",DateCreated=DateTime.Now,Image="/uploaded/images/20200608/Giay_UltraBoost_19_Mau_xanh_la_G27132.jpg",SeoAlias = "san-pham-4",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "GIÀY ULTRABOOST 20",DateCreated=DateTime.Now,Image="/uploaded/images/20200608/Giay_UltraBoost_20_Mau_xam_EG0705.jpg",SeoAlias = "san-pham-5",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
                         }
                     },
                     new ProductCategory() { Name="Nike",SeoAlias="nike",ParentId = null,Status=Status.Active ,SortOrder=2,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Product 6",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-6",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 7",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-7",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 8",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-8",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 9",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-9",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 10",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-10",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Giày AphaBounce",DateCreated=DateTime.Now,Image="/uploaded/images/20200608/Alphabounce.jpg",SeoAlias = "san-pham-6",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "DIDAS ALPHABOUNCE INSTINCT M CORE",DateCreated=DateTime.Now,Image="/uploaded/images/20200608/adidas-alphabounce-instinct-m-core-black-1-1.jpg",SeoAlias = "san-pham-7",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "ADIDAS ALPHABOUNCE INSTINCT GREYISH",DateCreated=DateTime.Now,Image="/uploaded/images/20200608/adidas-alphabounce-instinct-greyish-nam-nu.jpg",SeoAlias = "san-pham-8",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "Giày Convers",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-9",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "Product 10",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-10",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
                         }},
                     new ProductCategory() { Name="Balenciaga",SeoAlias="balenciaga",ParentId = null,Status=Status.Active ,SortOrder=3,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Product 11",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-11",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 12",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-12",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 13",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-13",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 14",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-14",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 15",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-15",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Air Max 720 Pink Sea (PRE – ORDER)",DateCreated=DateTime.Now,Image="/uploaded/images/20200608/air-force-1-shadow-pale-ivory-nu.jpg",SeoAlias = "san-pham-11",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "Product 12",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-12",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "Product 13",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-13",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "Product 14",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-14",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "Product 15",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-15",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
                         }},
                     new ProductCategory() { Name="Converse",SeoAlias="converse",ParentId = null,Status=Status.Active,SortOrder=4,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Product 16",DateCreated=DateTime.Now, Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-16",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 17",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-17",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 18",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-18",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 19",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-19",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 20",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-20",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Nike Air Force One",DateCreated=DateTime.Now, Image="/uploaded/images/20200608/nike-air-force-1-07-lux-white-platinum-tint-nam-nu.jpg",SeoAlias = "san-pham-16",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "Giày Nike Air F1",DateCreated=DateTime.Now,Image="/uploaded/images/20200612/nike-air-force-1-da-lon-co-cao-xam-1-1.jpg",SeoAlias = "san-pham-17",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "Product 18",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-18",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "Product 19",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-19",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
+                            new Product(){Name = "Product 20",DateCreated=DateTime.Now,Image="/uploaded/images/20200520/Conver.jpg",SeoAlias = "san-pham-20",Price =  1000000,Status = Status.Active,OriginalPrice =  1000000},
                         }}
                 };
                 _context.ProductCategories.AddRange(listProductCategory);

@@ -65,5 +65,23 @@ namespace TeduCoreApp.Application.Dapper.Implementation
                 }
             }
         }
+
+        public async Task<IEnumerable<ProductViewModels>> ProductQuantityAsync()
+        {
+            using (var sqlConnection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+                await sqlConnection.OpenAsync();
+
+                try
+                {
+                    return await sqlConnection.QueryAsync<ProductViewModels>(
+                        "GetQuantityProducts", commandType: CommandType.StoredProcedure);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+        }
     }
 }
