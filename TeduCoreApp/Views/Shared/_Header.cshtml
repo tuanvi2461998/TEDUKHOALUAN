@@ -23,7 +23,13 @@
                                         <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>@User.GetSpecificClaim("FullName")</span> <i class="fa fa-angle-down"></i></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href="/account.html">Account</a></li>
-                                            <li><a href="/order.html">Theo dõi đơn hàng</a></li>
+                                           
+                                            <li> <form method="post" action="/order.html">
+                                                <input type="hidden" name="Names" value="@User.GetSpecificClaim("FullName")" />
+                                                <button type="submit">Theo dõi đơn hàng</button> 
+                                                 </form>
+                                            </li>
+                                         
                                         </ul>
                                     </div>
                                 </li>

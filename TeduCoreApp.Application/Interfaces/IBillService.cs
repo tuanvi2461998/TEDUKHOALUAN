@@ -35,6 +35,9 @@ namespace TeduCoreApp.Application.Interfaces
 
         SizeViewModel GetSize(int id);
 
+        ProductQuantityViewModel GetColorQuan(int id);
+
+        List<ProductQuantityViewModel> GetColorQuans(int id);
         void Save();
     }
 }

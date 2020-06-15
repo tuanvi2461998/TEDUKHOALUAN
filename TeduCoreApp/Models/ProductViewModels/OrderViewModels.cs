@@ -7,12 +7,15 @@ using TeduCoreApp.Application.ViewModels.System;
 
 namespace TeduCoreApp.Models.ProductViewModels
 {
-    public class OrderViewModels
+    public class OrderViewModels 
     {
-        public AppUserViewModel NaFullNameme { get; set; }
+        public AppUserViewModel FullNameme { get; set; }
 
-        public List<BillViewModel> Biill { get; set; }
+        public List<BillViewModel> BiillCustomer { get; set; }
 
+        public List<BillDetailViewModel> BillDetailCus { get; set; }
+
+       public int total { get; set; }
 
     }
 }

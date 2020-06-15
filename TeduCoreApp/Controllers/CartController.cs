@@ -155,7 +155,7 @@ namespace TeduCoreApp.Controllers
                 bool hasChanged = false;
 
                 //Check exist with item product id
-                if (session.Any(x => x.Product.Id == productId))
+                if (session.Any(x => x.Product.Id == productId && x.Color.Id == color && x.Size.Id == size))
                 {
                     foreach (var item in session)
                     {
@@ -273,7 +273,12 @@ namespace TeduCoreApp.Controllers
             var colors = _billService.GetColors();
             return new OkObjectResult(colors);
         }
-
+        [HttpGet]
+        public IActionResult GetColorQuantity(int Proid)
+        {
+            var colo = _billService.GetColorQuans(Proid);
+            return new OkObjectResult(colo);
+        }
         [HttpGet]
         public IActionResult GetSizes()
         {

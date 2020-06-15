@@ -1,7 +1,7 @@
 ﻿@model TeduCoreApp.Models.ProductViewModels.OrderViewModels
 @{
     ViewData["Title"] = "Index";
-    var order = Model.Biill;
+    var order = Model.BiillCustomer;
 }
 <!-- Main Container -->
 <section class="main-container col2-right-layout">
@@ -10,7 +10,7 @@
             <div class="col-main col-sm-9 col-xs-12">
                 <div class="my-account">
                     <div class="page-title">
-                        <h2>Orders List</h2>
+                        <h2>Đơn Hàng</h2>
                     </div>
                     <div class="orders-list table-responsive">
                         <!--orders list table-->
@@ -25,18 +25,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                @foreach (var item in Model.BiillCustomer)
+                                {
                                 <tr>
                                     <!--order number-->
-                                    <td data-title="@order."><a href="order_details.html" class="order-number">#12345</a></td>
+                                    <td data-title=""><a href="order_details.html" class="order-number">@item.Id</a></td>
                                     <!--order date-->
-                                    <td data-title="Order Date">2017-02-13</td>
+                                    <td data-title="Order Date">@item.DateCreated</td>
                                     <!--order status-->
-                                    <td data-title="Order Status">Confirmed by ShopMart</td>
+                                    <td data-title="Order Status">@item.BillStatus</td>
                                     <!--quanity-->
-                                    <td data-title="Total"><span class="order-total">$79.00</span></td>
+                                    <td data-title="Total"><span class="order-total"></span></td>
                                 </tr>
-                               
+                                }
                             </tbody>
                         </table>
                     </div>

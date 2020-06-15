@@ -2,14 +2,14 @@
    var cachedObj = {
         colors: [],
         sizes: [],
+       coloquan:[]
     }
     this.initialize = function () {
-    $.when(loadColors(),
+        $.when(loadColors(),
             loadSizes())
     .then(function(){
             loadData();
             });
-      
         registerEvents();
     }
 
@@ -136,7 +136,23 @@
             }
         });
     }
-
+    function loadColorQuan() {
+        var productid = $(this).data('id');
+        return $.ajax({
+            type: "GET",
+            url: "/Cart/GetColorQuantity",
+            data: {
+                Proid: 28
+            },
+            dataType: "json",
+            success: function (response) {
+                cachedObj.coloquan = response;
+            },
+            error: function () {
+                tedu.notify('Có lỗi khi tải màu', 'error');
+            }
+        });
+    }
     function loadSizes() {
         return $.ajax({
             type: "GET",

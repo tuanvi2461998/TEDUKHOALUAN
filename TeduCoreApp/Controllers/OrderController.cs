@@ -16,13 +16,24 @@ namespace TeduCoreApp.Controllers
             _billService = billService;
         }
 
-        [Route("order.html", Name = "Order")]
-        public IActionResult Index(string Name)
+        [Route("order.html", Name = "Đơn Hàng")]
+        public IActionResult Index(string Names)
         {
             var order = new OrderViewModels();
             ViewData["BodyClass"] = "orders_list_page";
-            order.Biill =  _billService.GetByCustomer(Name);
+            order.BiillCustomer =  _billService.GetByCustomer(Names);
             return View(order);
         }
+
+        [Route("orderdetail-{id}.html", Name = "Chi Tiết")]
+        public IActionResult OrderDetailCustomer(int id)
+        {
+            var order = new OrderViewModels();
+            ViewData["BodyClass"] = "orders_list_page";
+            order.BillDetailCus = _billService.GetBillDetails(id);
+            return View(order);
+        }
+        #region AJAX Request
+        #endregion
     }
 }

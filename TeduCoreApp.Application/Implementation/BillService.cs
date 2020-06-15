@@ -21,11 +21,13 @@ namespace TeduCoreApp.Application.Implementation
         private readonly IRepository<Color, int> _colorRepository;
         private readonly IRepository<Size, int> _sizeRepository;
         private readonly IRepository<Product, int> _productRepository;
+        private readonly IRepository<ProductQuantity, int> _productquantityRepository;
         private readonly IUnitOfWork _unitOfWork;
 
 
         public BillService(IRepository<Bill, int> orderRepository,
-            IRepository<BillDetail, int> orderDetailRepository,
+            IRepository<ProductQuantity, int> productquantityRepository,
+        IRepository<BillDetail, int> orderDetailRepository,
             IRepository<Color, int> colorRepository,
             IRepository<Product, int> productRepository,
             IRepository<Size, int> sizeRepository,
@@ -36,6 +38,7 @@ namespace TeduCoreApp.Application.Implementation
             _colorRepository = colorRepository;
             _sizeRepository = sizeRepository;
             _productRepository = productRepository;
+            _productquantityRepository = productquantityRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -188,8 +191,21 @@ namespace TeduCoreApp.Application.Implementation
 
         public List<BillViewModel> GetByCustomer(string Name)
         {
-            return _orderRepository.FindAll(x=>x.CustomerName==Name)
+            return _orderRepository
+                .FindAll(x => x.CustomerName == Name && x.BillStatus == BillStatus.New || x.BillStatus == BillStatus.InProgress)
                 .ProjectTo<BillViewModel>().ToList();
+        }
+
+        public ProductQuantityViewModel GetColorQuan(int id)
+        {
+            return Mapper.Map<ProductQuantity, ProductQuantityViewModel>(_productquantityRepository.FindById(id));
+           
+               // .ProjectTo<ProductQuantityViewModel>().ToList();
+        }
+
+        public List<ProductQuantityViewModel> GetColorQuans(int id)
+        {
+            return _productquantityRepository.FindAll(x => x.ProductId == id).ProjectTo<ProductQuantityViewModel>().ToList();
         }
     }
 }
