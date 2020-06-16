@@ -53,21 +53,13 @@
                                     <div class="product-item">
                                         <div class="item-inner">
                                             <div class="product-thumbnail">
-                                                <div class="icon-sale-label sale-left">Sale</div>
-                                                <div class="icon-new-label new-right">New</div>
                                                 <div class="pr-img-area">
 
                                                     <a title="Ipsums Dolors Untra" href="@url">
                                                         <figure> <img class="first-img" src="@item.Image" alt="@item.Name" asp-append-version="true"> <img class="hover-img" src="@item.Image" alt="@item.Name"></figure>
                                                     </a>
                                                 </div>
-                                                <div class="pr-info-area">
-                                                    <div class="pr-button">
-                                                        <div class="mt-button add_to_wishlist"> <a href="wishlist.html"> <i class="fa fa-heart"></i> </a> </div>
-                                                        <div class="mt-button add_to_compare"> <a href="compare.html"> <i class="fa fa-signal"></i> </a> </div>
-                                                        <div class="mt-button quick-view"> <a href="quick_view.html"> <i class="fa fa-search"></i> </a> </div>
-                                                    </div>
-                                                </div>
+                                               
                                             </div>
                                             <div class="item-info">
                                                 <div class="info-inner">
@@ -75,7 +67,7 @@
                                                     <div class="item-content">
                                                         <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> </div>
                                                         <div class="item-price">
-                                                            <div class="price-box"> <span class="regular-price"> <span class="price">@item.Price.ToString("N0")</span> </span> </div>
+                                                            <div class="price-box"> <span class="regular-price"> <span class="price">@item.Price.ToString("N0") VNĐ</span> </span> </div>
                                                         </div>
                                                         <div class="">
                                                             <button type="button" class="add-to-cart" data-id="@item.Id"><span>Mua ngay</span> </button>
